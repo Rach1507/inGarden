@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    <title>InGarden</title>
+
+    <link rel="icon" type="image/x-icon" href="inGarden/assests/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;500&family=Exo+2:wght@100&display=swap" rel="stylesheet">
+    
+
+ 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<!-- <meta name="theme-color" content="#7952b3">  -->
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+
+  </head>
+  <body>
+    
+    <main class="intro-main">
+
+    <section class="py-5 text-center container ">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Admin Page</h1>
+          <!-- <p class="lead text-muted">Shop all you need for your indoor garden to thrive.House Plants , Fertilizers , Garden tools , Pots , Containers and much more </p>
+          <p>
+            <a href="#" class="btn btn-primary my-2 btn-success">Shop Now</a> -->
+            <!-- <a href="#" class="btn btn-secondary my-2"></a> -->
+          <!-- </p> -->
+        </div>
+      </div>
+    </section>
+
+
+    <div class="container">
+    <!-- <app-product-card [allproducts] ="adminProducts" >
+
+    </app-product-card> -->
+
+    <div class="allproducts">
+        <table class="table table-bordered ">
+          <thead>
+          <tr class="table-success">
+            <th scope="col">Product id</th>
+            
+            <th scope="col">Product name</th>
+            <th scope="col">Product price</th>
+            <th scope="col">Product Description</th>
+            <th scope="col">Category Id</th>
+            <th scope="col">units in stock</th>
+            <th scope="col">Plant Width</th>
+            <th scope="col">Plant height</th>
+            <th scope="col">Plant care tips</th>
+            <th scope="col">Plant image</th>
+
+            <th scope="col" >Edit or Delete</th>
+          </tr>
+        </thead>
+          <tbody class="table-hover">
+          <tr *ngFor="let product of adminProducts">
+
+            <!-- <td>
+             <input type="checkbox" />
+            </td> -->
+            <td>
+              {{product.prod_id}}
+            </td>  
+            <td>
+              {{product.prod_name}}
+            </td>
+            <td>
+              {{product.prod_price}}
+            </td>
+            <td>
+              {{product.prod_desc}}
+            </td>
+            <td>
+              {{product.category_id}}
+            </td>
+            <td>
+              {{product.units_in_stock}}
+            </td>
+            <td>
+              {{product.plant_width}}
+            </td>
+            <td>
+              {{product.plant_height}}
+            </td>
+            <td>
+              {{product.prod_care_tip}}
+            </td>
+            <td>
+              <!-- {{product.prod_image}} -->
+              <!-- <img src="https://project-ingarden-images.s3.ap-south-1.amazonaws.com/annie-spratt-cu0mWqDsJ2U-unsplash.jpg" alt=""> -->
+              <img src="{{product.prod_image}}" alt=""  style="width: 200px;height: 150px;">
+             
+            </td>
+
+            <td >
+              <button type="button" class="btn btn-outline-success">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
+  <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"></path>
+</svg>
+                
+              </button>
+
+              <button type="button" class="btn btn-outline-danger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+  <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"></path>
+</svg>
+               
+              </button>
+
+         <!-- <button class="btn btn-outline-success"><i class="bi bi-pen-fill"></i>
+           
+          
+         </button> -->
+         <!-- <button class="btn btn-outline-danger">Delete</button> -->
+            </td>
+          </tr>
+        </tbody>
+        </table>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <button class="btn btn-secondary"> Add new product entry</button>
+      </div>
+</div>
+</main>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
+</body>
+</html>
+
+<router-outlet></router-outlet>
