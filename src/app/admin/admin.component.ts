@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AdminService } from "../services/admin.service";
+import { Router, ActivatedRoute, ParamMap,NavigationExtras } from '@angular/router';
 
 
 @Component({
@@ -12,10 +13,15 @@ import { AdminService } from "../services/admin.service";
 
 export class AdminComponent implements OnInit {
   public adminProducts: any | undefined;
-  constructor(private service:AdminService) { }
+  display = "none";
+  id: any;
+  constructor(private service:AdminService, private _router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getAllPlants();
+    this.route.queryParams.subscribe(params => {
+      this.id = params['prod_id'];
+    });
   }
 
   getAllPlants(){
@@ -25,5 +31,28 @@ export class AdminComponent implements OnInit {
 
     );
   }
+ 
+
+  editProduct(prod_id:number){
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        "prodId": prod_id
+      }
+    };
+    this._router.navigate(['/update'],navigationExtras);
+
+ }
+
+createProduct(){
+ this._router.navigateByUrl('/create');
+}
+
+deleteProd(prod_id:number){
+  this.service.deleteProduct(prod_id);
+  console.log(prod_id);
+  
+  window.location.reload();
+
+}
 
 }

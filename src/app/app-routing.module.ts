@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, ActivatedRoute, ParamMap } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { ProductComponent } from './product/product.component';
 
 import { MainComponent } from "./main/main.component";
 import { FormComponent } from './form/form.component';
+import { EditFormComponent } from './edit-form/edit-form.component';
+
+
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   {
@@ -14,6 +18,7 @@ const routes: Routes = [
   {
     path:'admin',
     component: AdminComponent
+   
   }
 
   ,{
@@ -25,8 +30,22 @@ const routes: Routes = [
     component:FormComponent
   },{
     path:"update",
-    component:FormComponent
+    component:EditFormComponent
   }
+  ,
+  {
+    path:"cart",
+    component:CartComponent
+  }
+  , 
+  {
+    path:"update",
+    component:EditFormComponent
+  }
+  // ,
+  // {
+  //   path:"/categories/"
+  // }
 ];
 
 @NgModule({

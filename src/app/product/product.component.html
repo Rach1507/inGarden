@@ -1,46 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
 
-    <title>InGarden</title>
-
-    <link rel="icon" type="image/x-icon" href="inGarden/assests/favicon.ico">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;500&family=Exo+2:wght@100&display=swap" rel="stylesheet">
-    
-
- 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-<meta name="theme-color" content="#7952b3"> 
-
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    <!-- <link href="main.component.css" rel="stylesheet"> -->
-  </head>
-  <body>
     
     <main class="intro-main">
 
@@ -48,11 +6,9 @@
       <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
           <h1 class="fw-light">All products</h1>
-          <!-- <p class="lead text-muted">Shop all you need for your indoor garden to thrive.House Plants , Fertilizers , Garden tools , Pots , Containers and much more </p>
+          <p class="lead text-muted">Shop all you need for your indoor garden to thrive.House Plants , Fertilizers , Garden tools , Pots , Containers and much more </p>
           <p>
-            <a href="#" class="btn btn-primary my-2 btn-success">Shop Now</a> -->
-            <!-- <a href="#" class="btn btn-secondary my-2"></a> -->
-          <!-- </p> -->
+           
         </div>
       </div>
     </section>
@@ -65,39 +21,44 @@
   
 
         <div class="col" *ngFor ="let product of allProducts">
-           <div class=" card shadow-sm">
+           <div class="card shadow-sm">
+
+            <div class="card align-items-center">
              <img style=" height:250px; width:250px;" class="card-img-top align-items-center" src="{{product.prod_image}}" alt="">
              <div class="card-body">
                <p class="card-text">{{product.prod_name}}</p>
-               <div class="d-flex justify-content-between align-items-center">
-                 <div class="btn-group">
-                   <button type="button" class="btn btn-sm btn-success">Add to cart</button>
-                   <button type="button" class="btn btn-sm btn-outline-success">Add to wishlist</button>
-                 </div>
-                 <small class="text-muted">
-                   <span>
-                     &#x20B9;
-                   </span>{{product.prod_price}}</small>
-              
-             </div>
-             </div>
-           </div>
-         </div>
+              </div>
+          
+         
+              <div class="card-body">
+                <div class="btn-group">
+                  <button type="button" (click)="addToCart(product.prod_id)"   class="btn btn-sm btn-success">Add to cart</button>
 
+                  <!-- <button type="button" (click)="addToCart(product.prod_id)"  class="btn btn-sm btn-success">{{ this.service.cartList.contains(product) ? "Added" : "Add" }}to cart</button> -->
+                  <button type="button" (click)="addToFavs(product.prod_id)" class="btn btn-sm btn-outline-success">Add to wishlist</button>
+                
+                <p class="ms-5 me-1 text-muted text-end">
+                  <span>
+                    &#x20B9;
+                  </span>{{product.prod_price}}</p>
+                 </div>
+       
+               
+              </div>
+            </div>
        
         </div>
+        <br>
+        <br>
+
+
       </div>
+    </div>
     <!-- <app-product-card [allproducts] ="allProducts" >
 
     </app-product-card> -->
-<!-- </div> -->
+</div>
 </main>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    
-</body>
-</html>
 
 <router-outlet></router-outlet>

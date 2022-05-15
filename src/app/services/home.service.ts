@@ -8,17 +8,28 @@ const httpOptions = {
     'Content-Type':'application/json'
   })
 }
-// @Injectable({
-//   providedIn: 'root'
-// })
+
 
 @Injectable()
 export class HomeService {
 
+  cart_count!:number;
   constructor(private http:HttpClient) { 
   }
     getAllProducts(){
       return this.http.get('/server/products');
     
+  }
+
+  getProductsByCategoryId(id:String){
+    return this.http.get("/server/products/categories/"+id);
+  }
+
+  getProductById(id:number){
+    // let token = localStorage.getItem('access_token');
+    return this.http.get('/server/products/'+id
+    // ,{headers:new HttpHeaders().set('Authorization','Bearer'+token)}
+    
+    );
   }
 }

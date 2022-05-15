@@ -1,33 +1,17 @@
 
-<!-- <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-
-    <link href="app-navbar.component.css" rel="stylesheet">
-  </head>
-  <body>
-    
-
-
-<main> -->
- 
-
   
     
 
 
-  <div class="container ml-2 mr-2">
-    <header class=" d-flex flex-wrap align-items-center   justify-content-md-between py-3 mb-4 border-bottom">
+  <div class="container ml-2 mr-1">
+    <header class="  py-1 mb-4 border-bottom">
      <nav class="navbar nav">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/home">
         <img src="https://img.icons8.com/emoji/344/leaf-fluttering-in-wind.png" width="30" height="30" alt="">
         <span class="navbar-brand text-success" >InGarden</span>
       </a>
 
-      <div class="d-flex justify-content-center mx-auto ">
+      <div class=" justify-content-first mx-auto ">
     
       <ul class="nav  col-12 col-md-auto mb-2  ">
         
@@ -42,15 +26,13 @@
                   Explore More
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <!-- <a class="dropdown-item" href="#">Plants for Office space</a>
-                  <a class="dropdown-item" href="#">Outdoor plants</a>
-                  <div class="dropdown-divider"></div> -->
-                  <!-- <a class="dropdown-item" href="#">Flowering Houseplants </a> -->
-                  <!-- <a class="dropdown-item" href="#">Succelents</a> -->
-                  <a class="dropdown-item" href="#">Low-light </a>
-                  <a class="dropdown-item" href="#">Air purifiers</a>
-                  <!-- <a class="dropdown-item" href="#">Low-light </a> -->
-                  <a class="dropdown-item" href="#">Trailing & Climbing Plants
+                
+                
+                  <a class="dropdown-item" [routerLink]="['/allProducts' ,{category:'2'}]" >Low-light </a>
+
+                  <a class="dropdown-item" [routerLink]="['/allProducts' ,{category:'3'}]">Air purifiers</a>
+           
+                  <a class="dropdown-item" [routerLink]="['/allProducts' ,{category:'4'}]">Trailing & Climbing Plants
                 </a>
                 </div>
              
@@ -58,24 +40,40 @@
         
       </ul>
     </div>
-    </nav>  
-    <!-- </ul> -->
+
+    <div class="fs-2 mb-3 my-0">
+      <button class="btn " (click)="goToCart()"> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+        </svg></button> 
+        <small id="cartCount">
+          {{cart_count}}
        
-      <div class="col-md-3  justify-content-end">
+           </small>
+
+    </div>
+    </nav>  
+    
+ 
+
+      
+      <!-- <div class="col-md-3 justify-content-end ">
         <button type="button" class="btn btn-outline-success me-2">Login</button>
         <button type="button" class="btn btn-success  ">Sign-up</button>
-      </div>
+      </div> -->
+
+    
+
 
     </header>
 
 
-    <div class=" d-flex justify-content-center align-content-center">
+    <!-- <div class=" d-flex justify-content-center align-content-center">
         <form class="w-75 ">
           <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
           
         </form>
         <button class="btn btn-outline-success">Search</button>
-      </div>
+      </div> -->
      
 
      
@@ -84,17 +82,4 @@
   </div>
   
 
-<!-- 
-
-</main>
-
- 
-    <!-- <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
-
-      
-  </body> 
-
-  
-
-</html> -->
 

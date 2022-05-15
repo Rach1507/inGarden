@@ -14,6 +14,10 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { AdminComponent } from './admin/admin.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormComponent } from './form/form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditFormComponent } from './edit-form/edit-form.component';
+
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -27,19 +31,23 @@ import { FormComponent } from './form/form.component';
         AdminComponent,
         MainComponent,
         FooterComponent,
-        FormComponent
+        FormComponent,
+        EditFormComponent,
+     
+        CartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule
     
     
   ],
   providers: [
   HomeService,
-  AdminService
-
+  AdminService,
+ 
   ],
   bootstrap: [AppComponent]
 })

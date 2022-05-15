@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { CardService } from '../services/card.service';
 
 @Component({
   selector: 'app-app-navbar',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppNavbarComponent implements OnInit {
 
-  constructor() { }
+  @Input() 
+  cart_count !:number;
+  constructor(private _router: Router, private route: ActivatedRoute,private cartService:CardService) { }
 
   ngOnInit(): void {
+    this.cart_count=this.cartService.cartList.length;
+    // this.cart_count=0;
+  // 
   }
+
+  goToCart(){
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        // "uId": uid
+      }
+    };
+
+    this._router.navigate(['/cart'],navigationExtras);
+
+  }
+
+
 
 }

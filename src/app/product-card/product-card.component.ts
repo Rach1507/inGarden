@@ -8,6 +8,7 @@ import { ProductComponent  } from "../product/product.component";
 })
 export class ProductCardComponent implements OnInit {
 
+  
   @Input() allproducts: any ;
   constructor() { }
 

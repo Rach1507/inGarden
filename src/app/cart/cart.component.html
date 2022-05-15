@@ -1,0 +1,74 @@
+<div class="container">
+
+  <h2>All Cart Items</h2>
+<table class="table  ">
+    <tbody class="table-hover">
+
+
+        <tr *ngFor="let product of cartList" >
+
+            <td>
+               <img src={{product.prod_image}} style=" height:150px; width:150px;" alt="" >
+              </td>
+          <td>
+            {{product.prod_name}}
+          </td>
+          <td>
+            <span>
+              &#x20B9;
+            </span> {{product.prod_price}}
+          </td>
+          <td>
+            {{product.prod_desc}}
+          </td>
+         <td>
+            {{product.plant_width}} cms x
+          </td>
+          <td>
+            {{product.plant_height}}cms
+          </td>
+        </tr>
+        </tbody>
+</table>
+
+<button *ngIf="cartList?.length" class="btn btn-lg btn-success" id="checkout" (click)="checkout()"> Proceed to checkout </button>
+
+
+</div>
+<br>
+
+<div class="container form-control-sm w-50 invisible" id="address">
+  <h2>Add Recipient Info</h2>
+  <form [formGroup]="addressForm" (ngSubmit)="placeOrder()" novalidate>
+  
+    <div class="form-group">
+      <label>Recipient Name</label>
+      <input type="text" class="form-control" formControlName="name" name="name" placeholder="Full Name" required autofocus/>
+    </div>
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="tel" class="form-control" formControlName="phone" placeholder="" minlength="10" maxlength="12" required/>
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control" formControlName="email" name="email" placeholder="example@gmail.com" required/>
+    </div>
+    <div class="form-group">
+      <label>Address Line 1</label>
+      <input type="text" class="form-control" formControlName="address_line_one" placeholder="Door No , Street Name " required/>
+    </div>
+    <div class="form-group">
+      <label>Address Line 2</label>
+      <input type="text" class="form-control" formControlName="address_line_two" placeholder="Area" />
+    </div>
+    <div class="form-group">
+      <label>Pin code</label>
+      <input type="number" class="form-control" formControlName="pin_code" minlength="6" maxlength="6" required/>
+    </div>
+  <!-- <div *ngIf="message != ''">
+      <h3 class="has-info">{{message}}</h3>
+    </div> -->
+
+<button type="submit" class="btn btn-success"  (click)="placeOrder()" >Place Order</button>
+</form>
+</div>
